@@ -1,11 +1,20 @@
+
+
 <div class="container">
+
+  <div class = "banner">
+<%= cl_image_tag("zsdewu1vpmfoh8d6cxbe.jpg", :effect=>"art:incognito", :height=>500, :crop=>"fill") %>
+</div>
   <div class = "index">
-    <h1>All Cocktails</h1>
+
+
+     <h1>All Cocktails</h1>
     <div class="row">
       <%@cocktails.each do |cocktail|%>
         <div class="col-xs-4">
           <div class = "card-index">
             <h2><%=link_to cocktail.name, cocktail_path(cocktail)%></h2>
+            <%= cl_image_tag cocktail.photo, height: 200, width: 300, crop: :fill %>
              <!--     INGREDIENTS -->
           </div>
         </div>

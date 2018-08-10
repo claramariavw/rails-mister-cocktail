@@ -1,25 +1,23 @@
 <div class = "container">
-  <h3>Ingredients:</h3>
+  <h3></h3>
 
 
   <div class = "card-cocktail">
     <div>
       <h1><%=@cocktail.name%></h1>
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
     </div>
+    <br>
     <div>
+      <h3>Ingredients:</h3>
       <%@cocktail.doses.each do |dose|%>
-      <div class ="r">
-        <div class="c">
-          <p><%=dose.description%> <%=dose.ingredient.name%></p>
-        </div>
-        <div class="c">
-          <%=link_to "Remove", cocktail_dose_path(dose),method: :delete %>
-        </div>
+      <div class ="card-ino">
+          <p><%=dose.description%> <%=dose.ingredient.name%> | <%=link_to (raw("<i class='fas fa-trash-alt'></i>")), dose_path(dose),method: :delete, class: "trash" %></p>
       </div>
       <%end%>
     </div>
   </div>
   <br>
-  <div> <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %></div>
+  <div class ="add"> <%= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %></div>
 </div>
 
