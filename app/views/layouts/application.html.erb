@@ -9,10 +9,22 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Code+Pro:400,700" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="navbar">
+      <div class = "navbar-right">
+        <%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-success navbar-button"%>
+      </div>
+      <div class = "navbar-left">
+        <h3><%= link_to "Mister Cocktail", cocktails_path%></h3>
+      </div>
+    </div>
+
     <%= yield %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>

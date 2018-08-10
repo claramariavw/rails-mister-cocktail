@@ -1,0 +1,7 @@
+<div class = "container">
+  <%=simple_form_for(@cocktail) do|f|%>
+    <%=f.input :name%>
+    <%=f.input :picture_url%>
+    <%= f.submit "Add cocktail", class: "btn btn-success" %>
+  <% end %>
+</div>
